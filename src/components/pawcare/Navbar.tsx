@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import pawLogo from "@/assets/paw-logo.png";
 
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Doctor", href: "#doctor" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -30,8 +28,22 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <img src={pawLogo} alt="PawCare Logo" className="w-9 h-9 object-contain" />
-          <span className="font-display text-2xl font-bold text-gradient">PawCare</span>
+          {/* Hexagon SVG logo matching the brand */}
+          <div className="relative w-10 h-10 flex items-center justify-center">
+            <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon
+                points="24,2 44,13 44,35 24,46 4,35 4,13"
+                stroke="hsl(var(--secondary))"
+                strokeWidth="2.5"
+                fill="hsl(var(--secondary-light))"
+              />
+              <text x="24" y="30" textAnchor="middle" fontSize="18" fill="hsl(var(--primary))">🐾</text>
+            </svg>
+          </div>
+          <div className="leading-tight">
+            <div className="font-display text-lg font-bold text-gradient leading-none">Vet & Pet Care</div>
+            <div className="text-xs font-body text-muted-foreground">Dr. Foysal Kabir</div>
+          </div>
         </a>
 
         {/* Desktop Nav */}
@@ -49,7 +61,7 @@ export default function Navbar() {
             href="#contact"
             className="bg-gradient-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold shadow-soft hover:shadow-hover transition-all duration-300 hover:scale-105"
           >
-            Book Now
+            Book Appointment
           </a>
         </div>
 
@@ -83,7 +95,7 @@ export default function Navbar() {
             className="bg-gradient-primary text-primary-foreground px-5 py-3 rounded-full text-sm font-semibold text-center shadow-soft"
             onClick={() => setMenuOpen(false)}
           >
-            Book Now
+            Book Appointment
           </a>
         </div>
       )}

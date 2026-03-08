@@ -1,40 +1,44 @@
-import heroPets from "@/assets/hero-pets.jpg";
+import heroVet from "@/assets/hero-vet.jpg";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background */}
       <div className="absolute inset-0">
-        <img
-          src={heroPets}
-          alt="Happy pets"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/80 via-dark/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark/40 via-transparent to-transparent" />
+        <img src={heroVet} alt="Vet & Pet Care Clinic" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/85 via-dark/65 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/50 via-transparent to-transparent" />
       </div>
 
-      {/* Floating decorative circles */}
+      {/* Floating decorative blobs */}
       <div className="absolute top-32 right-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl animate-float" />
       <div className="absolute bottom-24 right-16 w-48 h-48 rounded-full bg-secondary/10 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
 
       {/* Content */}
-      <div className="relative container mx-auto px-6 pt-24 pb-16">
+      <div className="relative container mx-auto px-6 pt-28 pb-20">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary-foreground rounded-full px-4 py-1.5 text-sm font-medium mb-6 animate-fade-up">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Trusted by 2,000+ pet owners
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 text-white rounded-full px-4 py-1.5 text-sm font-medium mb-6 animate-fade-up">
+            <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+            BVC Reg. No. 9774 · Always Open
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Premium Care
-            <br />
-            <span className="text-gradient">for Your Pets</span>
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            Vet & Pet Care
           </h1>
+          <p className="text-white/90 text-xl md:text-2xl font-body font-light mb-2 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+            <span className="font-semibold">Dr. Foysal Kabir</span>
+          </p>
+          <p className="text-white/70 text-sm md:text-base font-body mb-2 animate-fade-up" style={{ animationDelay: "0.18s" }}>
+            B.Sc. Vet. Sci. & A.H. (SAU) &nbsp;|&nbsp; MS. Fellow in Surgery (SAU)
+          </p>
+          <p className="text-secondary text-sm font-body font-semibold mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            Registered Veterinary Practitioner · Consultant & Surgeon for Pet Animals
+          </p>
 
-          <p className="text-white/80 text-lg md:text-xl font-body font-light leading-relaxed mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Where every tail wags and every purr is heard. Professional pet care services 
-            tailored to your furry family members — because they deserve the very best.
+          <p className="text-white/75 text-base md:text-lg font-body font-light leading-relaxed mb-8 animate-fade-up" style={{ animationDelay: "0.25s" }}>
+            Expert veterinary consultation, surgery, and comprehensive pet care for your beloved animals.
+            Located in Mohammadpur, Dhaka — always open for your pets' needs.
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
@@ -42,27 +46,29 @@ export default function HeroSection() {
               href="#contact"
               className="bg-gradient-primary text-primary-foreground px-8 py-4 rounded-full text-base font-semibold shadow-hover hover:scale-105 transition-all duration-300"
             >
-              Book a Service
+              📅 Book Appointment
             </a>
             <a
-              href="#services"
-              className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-full text-base font-semibold hover:bg-white/20 transition-all duration-300"
+              href="https://wa.me/8801750656002"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-full text-base font-semibold hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
             >
-              Explore Services
+              💬 WhatsApp Us
             </a>
           </div>
 
-          {/* Stats */}
-          <div className="flex flex-wrap gap-8 mt-14 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          {/* Quick info strip */}
+          <div className="flex flex-wrap gap-6 mt-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
             {[
-              { number: "2,000+", label: "Happy Pets" },
-              { number: "8 Yrs", label: "Experience" },
-              { number: "4.9★", label: "Rating" },
-              { number: "24/7", label: "Support" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-white">
-                <div className="font-display text-3xl font-bold">{stat.number}</div>
-                <div className="text-white/60 text-sm font-body mt-0.5">{stat.label}</div>
+              { icon: "🕐", label: "Always Open" },
+              { icon: "📍", label: "Mohammadpur, Dhaka" },
+              { icon: "🏥", label: "Surgery & Consultation" },
+              { icon: "💻", label: "Online Consult Available" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-2 text-white/80 text-sm font-body">
+                <span>{item.icon}</span>
+                <span>{item.label}</span>
               </div>
             ))}
           </div>

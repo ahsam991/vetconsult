@@ -1,48 +1,48 @@
-import groomingImg from "@/assets/service-grooming.jpg";
-import daycareImg from "@/assets/service-daycare.jpg";
 import vetImg from "@/assets/service-vet.jpg";
-import walkingImg from "@/assets/service-walking.jpg";
+import surgeryImg from "@/assets/service-surgery.jpg";
+import vaccineImg from "@/assets/service-vaccine.jpg";
+import onlineImg from "@/assets/service-online.jpg";
 
 const services = [
   {
     id: 1,
-    title: "Dog Grooming",
+    title: "General Consultation",
     description:
-      "Full-service grooming including baths, haircuts, nail trimming, ear cleaning, and blowouts. Your dog will look and feel their best.",
-    image: groomingImg,
-    price: "From $45",
+      "Comprehensive health examination for dogs, cats, and other pet animals. Diagnosis and treatment of illnesses, injuries, and chronic conditions.",
+    image: vetImg,
     badge: "Most Popular",
     color: "primary",
+    icon: "🩺",
   },
   {
     id: 2,
-    title: "Dog Daycare",
+    title: "Surgery & Operations",
     description:
-      "Supervised playtime with other dogs in our safe, spacious facility. Keeps your pup active, socialized, and happy all day.",
-    image: daycareImg,
-    price: "From $35/day",
+      "Expert surgical procedures by Dr. Foysal Kabir (MS Fellow in Surgery). Soft tissue surgeries, orthopaedic procedures, and emergency operations.",
+    image: surgeryImg,
     badge: null,
     color: "secondary",
+    icon: "🏥",
   },
   {
     id: 3,
-    title: "Vet Check-ups",
+    title: "Vaccination & Prevention",
     description:
-      "Routine wellness exams, vaccinations, and preventive care with our certified in-house veterinarian team.",
-    image: vetImg,
-    price: "From $60",
-    badge: "New",
+      "Complete vaccination schedules for dogs and cats. Anti-rabies, distemper, parvovirus, and all essential preventive immunizations.",
+    image: vaccineImg,
+    badge: null,
     color: "primary",
+    icon: "💉",
   },
   {
     id: 4,
-    title: "Dog Walking",
+    title: "Online Consultation",
     description:
-      "Daily walks by trained, insured handlers. GPS-tracked routes with live updates sent to you throughout the walk.",
-    image: walkingImg,
-    price: "From $25/walk",
-    badge: null,
+      "Can't visit the clinic? Get expert vet advice online via WhatsApp or phone call. Quick diagnosis and prescription for your pet from anywhere in Bangladesh.",
+    image: onlineImg,
+    badge: "Available Now",
     color: "secondary",
+    icon: "💻",
   },
 ];
 
@@ -56,12 +56,12 @@ export default function ServicesSection() {
             Our Services
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Everything Your Pet{" "}
-            <span className="text-gradient">Deserves</span>
+            Expert Care for{" "}
+            <span className="text-gradient">Every Pet</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg font-body leading-relaxed">
-            From daily walks to full grooming sessions, we offer a comprehensive range of
-            professional pet care services.
+            From routine check-ups to complex surgeries — professional veterinary care 
+            you can trust for your beloved animals.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function ServicesSection() {
                 {service.badge && (
                   <span
                     className={`absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-full ${
-                      service.badge === "Most Popular"
+                      service.color === "primary"
                         ? "bg-primary text-primary-foreground"
                         : "bg-secondary text-secondary-foreground"
                     }`}
@@ -91,35 +91,52 @@ export default function ServicesSection() {
                     {service.badge}
                   </span>
                 )}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-card/80 to-transparent" />
               </div>
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="font-display text-xl font-bold text-card-foreground mb-2">
+                <div className="text-2xl mb-2">{service.icon}</div>
+                <h3 className="font-display text-lg font-bold text-card-foreground mb-2">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">
                   {service.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-lg font-bold text-primary">
-                    {service.price}
-                  </span>
-                  <a
-                    href="#contact"
-                    className={`text-sm font-semibold px-4 py-2 rounded-full transition-all duration-200 ${
-                      service.color === "primary"
-                        ? "bg-primary-light text-primary hover:bg-primary hover:text-primary-foreground"
-                        : "bg-secondary-light text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                    }`}
-                  >
-                    Book →
-                  </a>
-                </div>
+                <a
+                  href="#contact"
+                  className={`inline-block text-sm font-semibold px-4 py-2 rounded-full transition-all duration-200 ${
+                    service.color === "primary"
+                      ? "bg-primary-light text-primary hover:bg-primary hover:text-primary-foreground"
+                      : "bg-secondary-light text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                  }`}
+                >
+                  Book Now →
+                </a>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Additional services list */}
+        <div className="mt-12 bg-muted rounded-3xl p-8">
+          <h3 className="font-display text-xl font-bold text-foreground mb-6 text-center">
+            Also Available
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {[
+              { icon: "🦷", name: "Dental Care" },
+              { icon: "🩻", name: "X-Ray & Imaging" },
+              { icon: "💊", name: "Deworming" },
+              { icon: "✂️", name: "Neutering / Spaying" },
+              { icon: "🩹", name: "Wound Care" },
+              { icon: "🧪", name: "Lab Tests" },
+            ].map((item) => (
+              <div key={item.name} className="bg-card rounded-2xl p-4 text-center shadow-soft hover:shadow-card transition-all duration-200 hover:-translate-y-0.5">
+                <div className="text-3xl mb-2">{item.icon}</div>
+                <div className="text-xs font-body font-semibold text-card-foreground">{item.name}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
