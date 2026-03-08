@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,7 +29,6 @@ export default function Prescriptions() {
   const [search, setSearch] = useState("");
   const [showDialog, setShowDialog] = useState(false);
   const [printRx, setPrintRx] = useState<Prescription | null>(null);
-  const [viewRx, setViewRx] = useState<Prescription | null>(null);
   const [editMode, setEditMode] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
   const [form, setForm] = useState<Omit<Prescription, "id">>(emptyRx);
