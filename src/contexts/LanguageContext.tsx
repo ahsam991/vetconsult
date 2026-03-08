@@ -20,7 +20,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.badge": "BVC Reg. No. 9774 · Always Open",
-    "hero.title": "Vet & Pet Care",
+    "hero.title": "Vet Consult",
     "hero.degree": "B.Sc. Vet. Sci. & A.H. (SAU) | MS. Fellow in Surgery (SAU)",
     "hero.role": "Registered Veterinary Practitioner · Consultant & Surgeon for Pet Animals",
     "hero.desc": "Expert veterinary consultation, surgery, and comprehensive pet care for your beloved animals. Located in Mohammadpur, Dhaka — always open for your pets' needs.",
@@ -56,10 +56,10 @@ const translations: Record<Language, Record<string, string>> = {
     "extra.lab": "Lab Tests",
 
     // Why Us
-    "why.badge": "Why Vet & Pet Care?",
+    "why.badge": "Why Vet Consult?",
     "why.title1": "Compassionate Care,",
     "why.title2": "Expert Hands",
-    "why.p1": "Vet & Pet Care is a dedicated veterinary practice in Mohammadpur, Dhaka. Led by Dr. Foysal Kabir, we combine clinical expertise with genuine love for animals to provide the best possible outcomes for your pets.",
+    "why.p1": "Vet Consult is a dedicated veterinary practice in Mohammadpur, Dhaka. Led by Dr. Foysal Kabir, we combine clinical expertise with genuine love for animals to provide the best possible outcomes for your pets.",
     "why.p2": "Whether it's a routine vaccination, an emergency surgery, or an online consultation — we are always here for you and your animal family.",
     "why.cta1": "Book a Consultation →",
     "why.cta2": "💬 WhatsApp",
@@ -81,7 +81,7 @@ const translations: Record<Language, Record<string, string>> = {
     "doc.title1": "Your Pet's",
     "doc.title2": "Trusted Expert",
     "doc.name": "DR. Foysal Kabir",
-    "doc.role": "Consultant & Surgeon — Vet & Pet Care",
+    "doc.role": "Consultant & Surgeon — Vet Consult",
     "doc.c1": "B.Sc. Vet. Sci. & A. H. — Sher-e-Bangla Agricultural University (SAU)",
     "doc.c2": "MS. Fellow in Surgery — Sher-e-Bangla Agricultural University (SAU)",
     "doc.c3": "Registered Veterinary Practitioner · BVC Reg. No. 9774",
@@ -94,7 +94,7 @@ const translations: Record<Language, Record<string, string>> = {
     "test.badge": "Testimonials",
     "test.title1": "Happy Pets,",
     "test.title2": "Happy Owners",
-    "test.desc": "What pet owners in Dhaka say about Dr. Foysal Kabir and Vet & Pet Care.",
+    "test.desc": "What pet owners in Dhaka say about Dr. Foysal Kabir and Vet Consult.",
     "t1.name": "Rahim U.",
     "t1.pet": "Owner of Tommy (Dog)",
     "t1.text": "Dr. Foysal treated my Labrador Tommy after a serious infection. He was thorough, caring, and always available on WhatsApp for follow-up questions. Highly recommended!",
@@ -163,7 +163,7 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.desc": "Expert veterinary consultation and surgery for pet animals. Located in Mohammadpur, Dhaka. Always open for your pets.",
     "footer.services": "Services",
     "footer.contact": "Contact",
-    "footer.copyright": "© 2026 Vet & Pet Care · Dr. Foysal Kabir. All rights reserved.",
+    "footer.copyright": "© 2026 Vet Consult · Dr. Foysal Kabir. All rights reserved.",
   },
 
   bn: {
