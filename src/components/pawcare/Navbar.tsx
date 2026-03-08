@@ -42,7 +42,7 @@ export default function Navbar() {
             </svg>
           </div>
           <div className="leading-tight">
-            <div className="font-display text-lg font-bold text-gradient leading-none">Vet & Pet Care</div>
+            <div className="font-display text-lg font-bold text-gradient leading-none">Vet Consult</div>
             <div className="text-xs font-body text-muted-foreground">{t("nav.subtitle")}</div>
           </div>
         </a>
