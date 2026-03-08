@@ -32,7 +32,7 @@ export default function AdminLogin() {
             <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-3 shadow-md">
               <PawPrint className="w-7 h-7 text-primary-foreground" />
             </div>
-            <h1 className="text-xl font-bold text-foreground">Vet & Pet Care</h1>
+            <h1 className="text-xl font-bold text-foreground">Vet Consult</h1>
             <p className="text-sm text-muted-foreground mt-0.5">Admin Portal</p>
           </div>
 
@@ -82,14 +82,6 @@ export default function AdminLogin() {
             </button>
           </form>
 
-          {/* Demo Credentials */}
-          <div className="mt-5 p-3 bg-muted/50 rounded-xl border border-border">
-            <p className="text-xs font-semibold text-muted-foreground mb-1.5">🔑 Demo Credentials</p>
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-muted-foreground">Password:</span>
-              <code className="bg-background border border-border px-2 py-0.5 rounded font-mono font-bold text-foreground">admin123</code>
-            </div>
-          </div>
         </div>
 
         <p className="text-center text-xs text-muted-foreground mt-4">

@@ -33,7 +33,7 @@ export function AdminSidebar() {
           </div>
           {!collapsed && (
             <div>
-              <div className="font-bold text-sm text-foreground leading-none">Vet & Pet Care</div>
+              <div className="font-bold text-sm text-foreground leading-none">Vet Consult</div>
               <div className="text-xs text-muted-foreground mt-0.5">Admin Portal</div>
             </div>
           )}
