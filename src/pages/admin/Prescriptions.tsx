@@ -99,7 +99,7 @@ export default function Prescriptions() {
               <div class="signature"><div>Dr. Foysal Kabir<br><small>BVC Reg. No. 9774</small></div></div>
             </div>
           </body></html>`);
-           w.document.close();
+      w.document.close();
       w.print();
     }
   }
