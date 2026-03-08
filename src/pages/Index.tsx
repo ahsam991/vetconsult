@@ -6,9 +6,11 @@ import DoctorSection from "@/components/pawcare/DoctorSection";
 import TestimonialsSection from "@/components/pawcare/TestimonialsSection";
 import ContactSection from "@/components/pawcare/ContactSection";
 import Footer from "@/components/pawcare/Footer";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const Index = () => {
   return (
+    <LanguageProvider>
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
