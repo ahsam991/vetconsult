@@ -279,7 +279,7 @@ export default function Prescriptions() {
                   ))}
                 </div>
               </div>
-              {viewRx.notes && <div className="p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg"><p className="text-xs font-semibold mb-1">Notes for Owner</p><p className="text-sm">{viewRx.notes}</p></div>}
+              {viewRx.notes && <div className="p-3 bg-muted/60 border border-border rounded-lg"><p className="text-xs font-semibold mb-1 text-muted-foreground">⚠️ Notes for Owner</p><p className="text-sm text-foreground">{viewRx.notes}</p></div>}
               {viewRx.followUp && <p className="text-sm"><strong>📅 Follow-up:</strong> {viewRx.followUp}</p>}
             </div>
             <DialogFooter className="gap-2">
