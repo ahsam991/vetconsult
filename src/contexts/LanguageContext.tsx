@@ -20,7 +20,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.badge": "BVC Reg. No. 9774 · Always Open",
-    "hero.title": "Vet & Pet Care",
+    "hero.title": "Vet Consult",
     "hero.degree": "B.Sc. Vet. Sci. & A.H. (SAU) | MS. Fellow in Surgery (SAU)",
     "hero.role": "Registered Veterinary Practitioner · Consultant & Surgeon for Pet Animals",
     "hero.desc": "Expert veterinary consultation, surgery, and comprehensive pet care for your beloved animals. Located in Mohammadpur, Dhaka — always open for your pets' needs.",
@@ -56,10 +56,10 @@ const translations: Record<Language, Record<string, string>> = {
     "extra.lab": "Lab Tests",
 
     // Why Us
-    "why.badge": "Why Vet & Pet Care?",
+    "why.badge": "Why Vet Consult?",
     "why.title1": "Compassionate Care,",
     "why.title2": "Expert Hands",
-    "why.p1": "Vet & Pet Care is a dedicated veterinary practice in Mohammadpur, Dhaka. Led by Dr. Foysal Kabir, we combine clinical expertise with genuine love for animals to provide the best possible outcomes for your pets.",
+    "why.p1": "Vet Consult is a dedicated veterinary practice in Mohammadpur, Dhaka. Led by Dr. Foysal Kabir, we combine clinical expertise with genuine love for animals to provide the best possible outcomes for your pets.",
     "why.p2": "Whether it's a routine vaccination, an emergency surgery, or an online consultation — we are always here for you and your animal family.",
     "why.cta1": "Book a Consultation →",
     "why.cta2": "💬 WhatsApp",
@@ -81,7 +81,7 @@ const translations: Record<Language, Record<string, string>> = {
     "doc.title1": "Your Pet's",
     "doc.title2": "Trusted Expert",
     "doc.name": "DR. Foysal Kabir",
-    "doc.role": "Consultant & Surgeon — Vet & Pet Care",
+    "doc.role": "Consultant & Surgeon — Vet Consult",
     "doc.c1": "B.Sc. Vet. Sci. & A. H. — Sher-e-Bangla Agricultural University (SAU)",
     "doc.c2": "MS. Fellow in Surgery — Sher-e-Bangla Agricultural University (SAU)",
     "doc.c3": "Registered Veterinary Practitioner · BVC Reg. No. 9774",
@@ -94,7 +94,7 @@ const translations: Record<Language, Record<string, string>> = {
     "test.badge": "Testimonials",
     "test.title1": "Happy Pets,",
     "test.title2": "Happy Owners",
-    "test.desc": "What pet owners in Dhaka say about Dr. Foysal Kabir and Vet & Pet Care.",
+    "test.desc": "What pet owners in Dhaka say about Dr. Foysal Kabir and Vet Consult.",
     "t1.name": "Rahim U.",
     "t1.pet": "Owner of Tommy (Dog)",
     "t1.text": "Dr. Foysal treated my Labrador Tommy after a serious infection. He was thorough, caring, and always available on WhatsApp for follow-up questions. Highly recommended!",
@@ -163,7 +163,7 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.desc": "Expert veterinary consultation and surgery for pet animals. Located in Mohammadpur, Dhaka. Always open for your pets.",
     "footer.services": "Services",
     "footer.contact": "Contact",
-    "footer.copyright": "© 2026 Vet & Pet Care · Dr. Foysal Kabir. All rights reserved.",
+    "footer.copyright": "© 2026 Vet Consult · Dr. Foysal Kabir. All rights reserved.",
   },
 
   bn: {
@@ -177,7 +177,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.badge": "বিভিসি নিবন্ধন নং ৯৭৭৪ · সর্বদা খোলা",
-    "hero.title": "ভেট অ্যান্ড পেট কেয়ার",
+    "hero.title": "ভেট কনসাল্ট",
     "hero.degree": "বিএসসি ভেট সায়েন্স ও এএইচ (এসএইউ) | সার্জারিতে এমএস ফেলো (এসএইউ)",
     "hero.role": "নিবন্ধিত পশুচিকিৎসক · পোষা প্রাণীর পরামর্শদাতা ও সার্জন",
     "hero.desc": "আপনার প্রিয় পোষা প্রাণীর জন্য বিশেষজ্ঞ পশুচিকিৎসা, অস্ত্রোপচার ও সম্পূর্ণ সেবা। মোহাম্মদপুর, ঢাকায় অবস্থিত — সর্বদা আপনার পোষা প্রাণীর জন্য উপলব্ধ।",
@@ -213,10 +213,10 @@ const translations: Record<Language, Record<string, string>> = {
     "extra.lab": "ল্যাব পরীক্ষা",
 
     // Why Us
-    "why.badge": "কেন ভেট অ্যান্ড পেট কেয়ার?",
+    "why.badge": "কেন ভেট কনসাল্ট?",
     "why.title1": "যত্নশীল সেবা,",
     "why.title2": "বিশেষজ্ঞ হাত",
-    "why.p1": "ভেট অ্যান্ড পেট কেয়ার মোহাম্মদপুর, ঢাকার একটি নিবেদিতপ্রাণ পশুচিকিৎসালয়। ডা. ফয়সাল কবীরের নেতৃত্বে আমরা ক্লিনিক্যাল দক্ষতা ও প্রাণীদের প্রতি ভালোবাসা একত্রিত করে সর্বোত্তম সেবা প্রদান করি।",
+    "why.p1": "ভেট কনসাল্ট মোহাম্মদপুর, ঢাকার একটি নিবেদিতপ্রাণ পশুচিকিৎসালয়। ডা. ফয়সাল কবীরের নেতৃত্বে আমরা ক্লিনিক্যাল দক্ষতা ও প্রাণীদের প্রতি ভালোবাসা একত্রিত করে সর্বোত্তম সেবা প্রদান করি।",
     "why.p2": "নিয়মিত টিকা, জরুরি অস্ত্রোপচার, বা অনলাইন পরামর্শ — যাই হোক, আমরা সর্বদা আপনার ও আপনার পোষা প্রাণীর পাশে আছি।",
     "why.cta1": "পরামর্শ বুক করুন →",
     "why.cta2": "💬 হোয়াটসঅ্যাপ",
@@ -238,7 +238,7 @@ const translations: Record<Language, Record<string, string>> = {
     "doc.title1": "আপনার পোষা প্রাণীর",
     "doc.title2": "বিশ্বস্ত বিশেষজ্ঞ",
     "doc.name": "ডা. ফয়সাল কবীর",
-    "doc.role": "পরামর্শদাতা ও সার্জন — ভেট অ্যান্ড পেট কেয়ার",
+    "doc.role": "পরামর্শদাতা ও সার্জন — ভেট কনসাল্ট",
     "doc.c1": "বিএসসি ভেট সায়েন্স ও এএইচ — শেরেবাংলা কৃষি বিশ্ববিদ্যালয় (এসএইউ)",
     "doc.c2": "সার্জারিতে এমএস ফেলো — শেরেবাংলা কৃষি বিশ্ববিদ্যালয় (এসএইউ)",
     "doc.c3": "নিবন্ধিত পশুচিকিৎসক · বিভিসি নিবন্ধন নং ৯৭৭৪",
@@ -251,7 +251,7 @@ const translations: Record<Language, Record<string, string>> = {
     "test.badge": "রোগীদের মতামত",
     "test.title1": "সুখী পোষা প্রাণী,",
     "test.title2": "সুখী মালিক",
-    "test.desc": "ঢাকার পোষা প্রাণীর মালিকরা ডা. ফয়সাল কবীর ও ভেট অ্যান্ড পেট কেয়ার সম্পর্কে কী বলছেন।",
+    "test.desc": "ঢাকার পোষা প্রাণীর মালিকরা ডা. ফয়সাল কবীর ও ভেট কনসাল্ট সম্পর্কে কী বলছেন।",
     "t1.name": "রহিম উদ্দিন",
     "t1.pet": "টমির (কুকুর) মালিক",
     "t1.text": "ডা. ফয়সাল আমার ল্যাব্রাডর টমিকে গুরুতর সংক্রমণ থেকে সুস্থ করে তুলেছেন। তিনি সতর্ক, যত্নশীল এবং ফলো-আপ প্রশ্নের জন্য সর্বদা হোয়াটসঅ্যাপে পাওয়া যায়। অত্যন্ত সুপারিশযোগ্য!",
@@ -320,7 +320,7 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.desc": "পোষা প্রাণীর জন্য বিশেষজ্ঞ পশুচিকিৎসা পরামর্শ ও অস্ত্রোপচার সেবা। মোহাম্মদপুর, ঢাকায় অবস্থিত। সর্বদা আপনার পোষা প্রাণীর জন্য খোলা।",
     "footer.services": "সেবাসমূহ",
     "footer.contact": "যোগাযোগ",
-    "footer.copyright": "© ২০২৬ ভেট অ্যান্ড পেট কেয়ার · ডা. ফয়সাল কবীর। সর্বস্বত্ব সংরক্ষিত।",
+    "footer.copyright": "© ২০২৬ ভেট কনসাল্ট · ডা. ফয়সাল কবীর। সর্বস্বত্ব সংরক্ষিত।",
   },
 };
 

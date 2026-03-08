@@ -27,7 +27,7 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <div className="font-display text-xl font-bold text-gradient leading-none">Vet & Pet Care</div>
+                <div className="font-display text-xl font-bold text-gradient leading-none">Vet Consult</div>
                 <div className="text-xs font-body text-white/50">{t("nav.subtitle")}</div>
               </div>
             </div>
