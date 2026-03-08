@@ -1,12 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/pawcare/Navbar";
+import HeroSection from "@/components/pawcare/HeroSection";
+import ServicesSection from "@/components/pawcare/ServicesSection";
+import WhyUsSection from "@/components/pawcare/WhyUsSection";
+import TestimonialsSection from "@/components/pawcare/TestimonialsSection";
+import PricingSection from "@/components/pawcare/PricingSection";
+import ContactSection from "@/components/pawcare/ContactSection";
+import Footer from "@/components/pawcare/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navbar />
+      <HeroSection />
+      <ServicesSection />
+      <WhyUsSection />
+      <TestimonialsSection />
+      <PricingSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };
