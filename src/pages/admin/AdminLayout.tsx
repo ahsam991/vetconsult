@@ -1,7 +1,7 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
-import { Outlet, useLocation } from "react-router-dom";
-import { Bell, Search } from "lucide-react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Bell, Search, LogOut } from "lucide-react";
 
 const pageTitles: Record<string, string> = {
   "/admin": "Dashboard",
