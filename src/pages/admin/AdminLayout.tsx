@@ -14,7 +14,13 @@ const pageTitles: Record<string, string> = {
 
 export default function AdminLayout() {
   const location = useLocation();
+  const navigate = useNavigate();
   const title = pageTitles[location.pathname] ?? "Admin";
+
+  function handleLogout() {
+    sessionStorage.removeItem("admin_auth");
+    navigate("/admin/login");
+  }
 
   return (
     <SidebarProvider>
