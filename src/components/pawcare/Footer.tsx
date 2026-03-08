@@ -83,7 +83,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-body text-white/40">
           <span>{t("footer.copyright")}</span>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <a
               href="https://www.facebook.com/p/Vet-Consult-61575839930213/"
               target="_blank"
@@ -94,6 +94,15 @@ export default function Footer() {
             </a>
             <a href="https://wa.me/8801750656002" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
               WhatsApp
+            </a>
+            <a
+              href="/admin/login"
+              className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/50 hover:text-white/80 px-3 py-1.5 rounded-lg text-xs transition-all duration-200"
+            >
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+              Admin Login
             </a>
           </div>
         </div>
