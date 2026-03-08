@@ -1,33 +1,33 @@
 const reasons = [
   {
-    icon: "🏆",
-    title: "Certified Professionals",
-    description: "All our caregivers are certified, background-checked, and undergo continuous training in animal behavior and first aid.",
+    icon: "🏥",
+    title: "Always Open",
+    description: "Our clinic is open 24/7 — because emergencies don't follow office hours. Your pet's health is our priority at all times.",
   },
   {
-    icon: "📍",
-    title: "GPS Live Tracking",
-    description: "Real-time GPS updates during walks and outdoor activities so you always know where your pet is.",
+    icon: "🎓",
+    title: "Qualified Surgeon",
+    description: "Dr. Foysal Kabir holds an MS Fellowship in Surgery from SAU, bringing specialist-level surgical expertise to your pet's care.",
   },
   {
-    icon: "🏠",
-    title: "Safe & Clean Facilities",
-    description: "Our spaces are sanitized daily, temperature-controlled, and designed to keep pets comfortable and stress-free.",
+    icon: "🪪",
+    title: "Registered Practitioner",
+    description: "BVC Registered (Reg. No. 9774) — legally certified and held to the highest professional veterinary standards in Bangladesh.",
   },
   {
-    icon: "❤️",
-    title: "Personalized Attention",
-    description: "Every pet is unique. We create individualized care plans that match your pet's personality and health needs.",
+    icon: "💻",
+    title: "Online Consultations",
+    description: "Get expert vet advice from anywhere in Bangladesh via WhatsApp, phone call, or video — convenient and affordable.",
   },
   {
-    icon: "📸",
-    title: "Photo Updates",
-    description: "We send regular photo and video updates so you can enjoy peace of mind while you're away.",
+    icon: "🐕🐈",
+    title: "All Pet Animals",
+    description: "We care for dogs, cats, rabbits, birds, and more. Every animal deserves professional medical attention.",
   },
   {
-    icon: "🛡️",
-    title: "Fully Insured",
-    description: "We carry full liability insurance for all services, giving you complete peace of mind.",
+    icon: "💊",
+    title: "Full Treatment",
+    description: "From routine check-ups and vaccinations to complex surgeries — complete veterinary care under one roof.",
   },
 ];
 
@@ -36,30 +36,43 @@ export default function WhyUsSection() {
     <section id="about" className="section-padding bg-muted">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Text */}
+          {/* Left */}
           <div>
             <span className="inline-block bg-secondary-light text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-              Why PawCare?
+              Why Vet & Pet Care?
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              We Treat Your Pet{" "}
-              <span className="text-gradient">Like Family</span>
+              Compassionate Care,{" "}
+              <span className="text-gradient">Expert Hands</span>
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg font-body leading-relaxed mb-8">
-              Founded in 2016, PawCare started as a small dog-walking service and grew into 
-              a full-spectrum pet care center. Our mission is simple: to be the most trusted 
-              name in pet care in your neighborhood.
+            <p className="text-muted-foreground text-base md:text-lg font-body leading-relaxed mb-6">
+              Vet & Pet Care is a dedicated veterinary practice in Mohammadpur, Dhaka. 
+              Led by Dr. Foysal Kabir, we combine clinical expertise with genuine love for animals 
+              to provide the best possible outcomes for your pets.
             </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-gradient-secondary text-secondary-foreground px-8 py-4 rounded-full font-semibold shadow-soft hover:shadow-hover hover:scale-105 transition-all duration-300"
-            >
-              Meet Our Team
-              <span>→</span>
-            </a>
+            <p className="text-muted-foreground text-base font-body leading-relaxed mb-8">
+              Whether it's a routine vaccination, an emergency surgery, or an online consultation — 
+              we are always here for you and your animal family.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 bg-gradient-secondary text-secondary-foreground px-8 py-4 rounded-full font-semibold shadow-soft hover:shadow-hover hover:scale-105 transition-all duration-300"
+              >
+                Book a Consultation →
+              </a>
+              <a
+                href="https://wa.me/8801750656002"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bg-card text-foreground border border-border px-8 py-4 rounded-full font-semibold hover:shadow-soft transition-all duration-300"
+              >
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
 
-          {/* Right: Reasons Grid */}
+          {/* Right */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {reasons.map((reason, i) => (
               <div
