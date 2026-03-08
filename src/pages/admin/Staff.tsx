@@ -110,7 +110,7 @@ export default function Staff() {
               <div className="flex gap-2 mt-3 pt-3 border-t border-border">
                 <button onClick={() => setViewMember(member)} className="flex-1 text-xs py-1.5 rounded-lg border border-border hover:bg-muted transition-colors font-medium">View</button>
                 <button onClick={() => openEdit(member)} className="flex-1 text-xs py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-colors font-medium">Edit</button>
-                {member.id !== "S-001" && <button onClick={() => setStaff(prev => prev.filter(s => s.id !== member.id))} className="px-3 py-1.5 rounded-lg hover:bg-destructive/10 transition-colors"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>}
+                {member.id !== "S-001" && <button onClick={() => { if (window.confirm(`Remove ${member.name} from staff?`)) setStaff(prev => prev.filter(s => s.id !== member.id)); }} className="px-3 py-1.5 rounded-lg hover:bg-destructive/10 transition-colors"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>}
               </div>
             </CardContent>
           </Card>
