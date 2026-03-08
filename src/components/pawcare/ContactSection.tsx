@@ -106,7 +106,7 @@ export default function ContactSection() {
 
             {/* Facebook link */}
             <div className="mt-8 p-4 bg-card rounded-2xl shadow-soft border border-border flex items-center gap-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">📘</div>
+              <div className="w-12 h-12 bg-secondary-light rounded-xl flex items-center justify-center text-2xl">📘</div>
               <div>
                 <div className="font-body font-semibold text-sm text-foreground">Follow on Facebook</div>
                 <a
