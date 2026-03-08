@@ -160,7 +160,7 @@ export default function Prescriptions() {
                         <button onClick={() => setViewRx(rx)} className="p-1.5 rounded hover:bg-muted transition-colors"><Eye className="w-3.5 h-3.5 text-muted-foreground" /></button>
                         <button onClick={() => openEdit(rx)} className="p-1.5 rounded hover:bg-muted transition-colors"><Edit className="w-3.5 h-3.5 text-muted-foreground" /></button>
                         <button onClick={() => handlePrint(rx)} className="p-1.5 rounded hover:bg-primary/10 transition-colors" title="Print"><Printer className="w-3.5 h-3.5 text-primary" /></button>
-                        <button onClick={() => setRxList(prev => prev.filter(r => r.id !== rx.id))} className="p-1.5 rounded hover:bg-destructive/10 transition-colors"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>
+                        <button onClick={() => { if (window.confirm(`Delete prescription ${rx.id}?`)) setRxList(prev => prev.filter(r => r.id !== rx.id)); }} className="p-1.5 rounded hover:bg-destructive/10 transition-colors"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>
                       </div>
                     </td>
                   </tr>

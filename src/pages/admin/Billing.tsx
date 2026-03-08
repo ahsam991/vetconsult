@@ -192,7 +192,7 @@ export default function Billing() {
                         <button onClick={() => setViewInv(inv)} className="p-1.5 rounded hover:bg-muted transition-colors"><Eye className="w-3.5 h-3.5 text-muted-foreground" /></button>
                         <button onClick={() => openEdit(inv)} className="p-1.5 rounded hover:bg-muted transition-colors"><Edit className="w-3.5 h-3.5 text-muted-foreground" /></button>
                         <button onClick={() => handlePrint(inv)} className="p-1.5 rounded hover:bg-primary/10 transition-colors"><Printer className="w-3.5 h-3.5 text-primary" /></button>
-                        <button onClick={() => setInvoices(prev => prev.filter(i => i.id !== inv.id))} className="p-1.5 rounded hover:bg-destructive/10 transition-colors"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>
+                        <button onClick={() => { if (window.confirm(`Delete invoice ${inv.id}?`)) setInvoices(prev => prev.filter(i => i.id !== inv.id)); }} className="p-1.5 rounded hover:bg-destructive/10 transition-colors"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>
                       </div>
                     </td>
                   </tr>

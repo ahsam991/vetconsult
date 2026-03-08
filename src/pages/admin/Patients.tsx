@@ -119,7 +119,7 @@ export default function Patients() {
                       <div className="flex items-center gap-1">
                         <button onClick={() => setViewPet(p)} className="p-1.5 rounded hover:bg-muted transition-colors"><Eye className="w-3.5 h-3.5 text-muted-foreground" /></button>
                         <button onClick={() => openEdit(p)} className="p-1.5 rounded hover:bg-muted transition-colors"><Edit className="w-3.5 h-3.5 text-muted-foreground" /></button>
-                        <button onClick={() => setPets(prev => prev.filter(x => x.id !== p.id))} className="p-1.5 rounded hover:bg-destructive/10 transition-colors"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>
+                        <button onClick={() => { if (window.confirm(`Delete patient ${p.name}?`)) setPets(prev => prev.filter(x => x.id !== p.id)); }} className="p-1.5 rounded hover:bg-destructive/10 transition-colors"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>
                       </div>
                     </td>
                   </tr>

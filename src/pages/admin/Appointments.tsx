@@ -143,7 +143,7 @@ export default function Appointments() {
                       <div className="flex items-center gap-1">
                         <button onClick={() => setViewApt(a)} className="p-1.5 rounded hover:bg-muted transition-colors" title="View"><Eye className="w-3.5 h-3.5 text-muted-foreground" /></button>
                         <button onClick={() => openEdit(a)} className="p-1.5 rounded hover:bg-muted transition-colors" title="Edit"><Edit className="w-3.5 h-3.5 text-muted-foreground" /></button>
-                        <button onClick={() => deleteApt(a.id)} className="p-1.5 rounded hover:bg-destructive/10 transition-colors" title="Delete"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>
+                        <button onClick={() => { if (window.confirm(`Delete appointment for ${a.patient}?`)) deleteApt(a.id); }} className="p-1.5 rounded hover:bg-destructive/10 transition-colors" title="Delete"><Trash2 className="w-3.5 h-3.5 text-destructive" /></button>
                       </div>
                     </td>
                   </tr>
