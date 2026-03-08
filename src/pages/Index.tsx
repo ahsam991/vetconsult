@@ -11,16 +11,17 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 const Index = () => {
   return (
     <LanguageProvider>
-    <div className="min-h-screen">
-      <Navbar />
-      <HeroSection />
-      <ServicesSection />
-      <WhyUsSection />
-      <DoctorSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
-    </div>
+      <div className="min-h-screen">
+        <Navbar />
+        <HeroSection />
+        <ServicesSection />
+        <WhyUsSection />
+        <DoctorSection />
+        <TestimonialsSection />
+        <ContactSection />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 };
 
