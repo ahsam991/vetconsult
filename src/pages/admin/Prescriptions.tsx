@@ -28,11 +28,10 @@ export default function Prescriptions() {
   const [rxList, setRxList] = useState<Prescription[]>(initRx);
   const [search, setSearch] = useState("");
   const [showDialog, setShowDialog] = useState(false);
-  const [printRx, setPrintRx] = useState<Prescription | null>(null);
+  const [viewRx, setViewRx] = useState<Prescription | null>(null);
   const [editMode, setEditMode] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
   const [form, setForm] = useState<Omit<Prescription, "id">>(emptyRx);
-  const printRef = useRef<HTMLDivElement>(null);
 
   const filtered = rxList.filter(r => r.patient.toLowerCase().includes(search.toLowerCase()) || r.owner.toLowerCase().includes(search.toLowerCase()) || r.id.toLowerCase().includes(search.toLowerCase()));
 
@@ -49,11 +48,8 @@ export default function Prescriptions() {
   function updateMed(i: number, field: keyof Medicine, val: string) { setForm(f => ({ ...f, medicines: f.medicines.map((m, idx) => idx === i ? { ...m, [field]: val } : m) })); }
 
   function handlePrint(rx: Prescription) {
-    setPrintRx(rx);
-    setTimeout(() => {
-      if (printRef.current) {
-        const w = window.open("", "_blank");
-        if (w) {
+    const w = window.open("", "_blank");
+    if (w) {
           w.document.write(`<html><head><title>Prescription ${rx.id}</title><style>
             body { font-family: Arial, sans-serif; padding: 40px; color: #111; }
             .header { text-align: center; border-bottom: 2px solid #059669; padding-bottom: 16px; margin-bottom: 20px; }
