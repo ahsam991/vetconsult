@@ -85,7 +85,7 @@ export default function Billing() {
         .footer { margin-top: 40px; display: flex; justify-content: space-between; font-size: 12px; color: #777; }
       </style></head><body>
         <div class="header">
-          <h1>🐾 Vet & Pet Care</h1>
+          <h1>🐾 Vet Consult</h1>
           <p>Dr. Foysal Kabir — BVC Reg. No. 9774</p>
           <p>10/7 Block-A, Iqbal Road, Mohammadpur, Dhaka-1207 | 📞 01835-220347</p>
         </div>
@@ -114,7 +114,7 @@ export default function Billing() {
         </table>
         <p style="font-size:13px"><strong>Payment Method:</strong> ${inv.payMethod}</p>
         ${inv.notes ? `<p style="font-size:13px;color:#777">Note: ${inv.notes}</p>` : ""}
-        <div class="footer"><div>Thank you for trusting Vet & Pet Care with your pet's health!</div><div>Powered by Vet & Pet Care Management System</div></div>
+        <div class="footer"><div>Thank you for trusting Vet Consult with your pet's health!</div><div>Powered by Vet Consult Management System</div></div>
       </body></html>`);
       w.document.close();
       w.print();

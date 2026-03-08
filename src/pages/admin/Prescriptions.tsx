@@ -72,7 +72,7 @@ export default function Prescriptions() {
             .notes { background: #fffbeb; border: 1px solid #fde68a; padding: 10px; border-radius: 6px; font-size: 13px; margin-bottom: 16px; }
           </style></head><body>
             <div class="header">
-              <h1>🐾 Vet & Pet Care</h1>
+              <h1>🐾 Vet Consult</h1>
               <p>Dr. Foysal Kabir — B.Sc. Vet. Sci. & A.H. | MS. Fellow in Surgery (SAU)</p>
               <p>BVC Reg. No. 9774 | 10/7 Block-A, Iqbal Road, Mohammadpur, Dhaka-1207</p>
               <p>📞 01835-220347 | Always Open 24/7</p>
