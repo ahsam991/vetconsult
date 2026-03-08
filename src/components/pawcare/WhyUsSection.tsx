@@ -1,37 +1,17 @@
-const reasons = [
-  {
-    icon: "🏥",
-    title: "Always Open",
-    description: "Our clinic is open 24/7 — because emergencies don't follow office hours. Your pet's health is our priority at all times.",
-  },
-  {
-    icon: "🎓",
-    title: "Qualified Surgeon",
-    description: "Dr. Foysal Kabir holds an MS Fellowship in Surgery from SAU, bringing specialist-level surgical expertise to your pet's care.",
-  },
-  {
-    icon: "🪪",
-    title: "Registered Practitioner",
-    description: "BVC Registered (Reg. No. 9774) — legally certified and held to the highest professional veterinary standards in Bangladesh.",
-  },
-  {
-    icon: "💻",
-    title: "Online Consultations",
-    description: "Get expert vet advice from anywhere in Bangladesh via WhatsApp, phone call, or video — convenient and affordable.",
-  },
-  {
-    icon: "🐕🐈",
-    title: "All Pet Animals",
-    description: "We care for dogs, cats, rabbits, birds, and more. Every animal deserves professional medical attention.",
-  },
-  {
-    icon: "💊",
-    title: "Full Treatment",
-    description: "From routine check-ups and vaccinations to complex surgeries — complete veterinary care under one roof.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function WhyUsSection() {
+  const { t } = useLanguage();
+
+  const reasons = [
+    { icon: "🏥", titleKey: "why.r1.title", descKey: "why.r1.desc" },
+    { icon: "🎓", titleKey: "why.r2.title", descKey: "why.r2.desc" },
+    { icon: "🪪", titleKey: "why.r3.title", descKey: "why.r3.desc" },
+    { icon: "💻", titleKey: "why.r4.title", descKey: "why.r4.desc" },
+    { icon: "🐕🐈", titleKey: "why.r5.title", descKey: "why.r5.desc" },
+    { icon: "💊", titleKey: "why.r6.title", descKey: "why.r6.desc" },
+  ];
+
   return (
     <section id="about" className="section-padding bg-muted">
       <div className="container mx-auto">
@@ -39,27 +19,24 @@ export default function WhyUsSection() {
           {/* Left */}
           <div>
             <span className="inline-block bg-secondary-light text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-              Why Vet & Pet Care?
+              {t("why.badge")}
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Compassionate Care,{" "}
-              <span className="text-gradient">Expert Hands</span>
+              {t("why.title1")}{" "}
+              <span className="text-gradient">{t("why.title2")}</span>
             </h2>
             <p className="text-muted-foreground text-base md:text-lg font-body leading-relaxed mb-6">
-              Vet & Pet Care is a dedicated veterinary practice in Mohammadpur, Dhaka. 
-              Led by Dr. Foysal Kabir, we combine clinical expertise with genuine love for animals 
-              to provide the best possible outcomes for your pets.
+              {t("why.p1")}
             </p>
             <p className="text-muted-foreground text-base font-body leading-relaxed mb-8">
-              Whether it's a routine vaccination, an emergency surgery, or an online consultation — 
-              we are always here for you and your animal family.
+              {t("why.p2")}
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-gradient-secondary text-secondary-foreground px-8 py-4 rounded-full font-semibold shadow-soft hover:shadow-hover hover:scale-105 transition-all duration-300"
               >
-                Book a Consultation →
+                {t("why.cta1")}
               </a>
               <a
                 href="https://wa.me/8801750656002"
@@ -67,7 +44,7 @@ export default function WhyUsSection() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 bg-card text-foreground border border-border px-8 py-4 rounded-full font-semibold hover:shadow-soft transition-all duration-300"
               >
-                💬 WhatsApp
+                {t("why.cta2")}
               </a>
             </div>
           </div>
@@ -81,10 +58,10 @@ export default function WhyUsSection() {
               >
                 <div className="text-3xl mb-3">{reason.icon}</div>
                 <h3 className="font-display text-base font-bold text-card-foreground mb-2">
-                  {reason.title}
+                  {t(reason.titleKey)}
                 </h3>
                 <p className="text-muted-foreground text-sm font-body leading-relaxed">
-                  {reason.description}
+                  {t(reason.descKey)}
                 </p>
               </div>
             ))}

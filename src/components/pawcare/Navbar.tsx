@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
-
-const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Doctor", href: "#doctor" },
-  { label: "Contact", href: "#contact" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, toggle, t } = useLanguage();
+
+  const navLinks = [
+    { label: t("nav.services"), href: "#services" },
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.doctor"), href: "#doctor" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -28,7 +30,6 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          {/* Hexagon SVG logo matching the brand */}
           <div className="relative w-10 h-10 flex items-center justify-center">
             <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <polygon
@@ -42,12 +43,12 @@ export default function Navbar() {
           </div>
           <div className="leading-tight">
             <div className="font-display text-lg font-bold text-gradient leading-none">Vet & Pet Care</div>
-            <div className="text-xs font-body text-muted-foreground">Dr. Foysal Kabir</div>
+            <div className="text-xs font-body text-muted-foreground">{t("nav.subtitle")}</div>
           </div>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -57,24 +58,48 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          {/* Language Toggle */}
+          <button
+            onClick={toggle}
+            className="flex items-center gap-1.5 bg-muted hover:bg-secondary-light text-foreground hover:text-secondary border border-border rounded-full px-3 py-1.5 text-xs font-semibold font-body transition-all duration-200"
+            aria-label="Toggle language"
+          >
+            <span className="text-base leading-none">{lang === "en" ? "🇧🇩" : "🇬🇧"}</span>
+            <span>{lang === "en" ? "বাং" : "EN"}</span>
+          </button>
+
           <a
             href="#contact"
             className="bg-gradient-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold shadow-soft hover:shadow-hover transition-all duration-300 hover:scale-105"
           >
-            Book Appointment
+            {t("nav.book")}
           </a>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-        </button>
+        {/* Mobile right side */}
+        <div className="flex md:hidden items-center gap-2">
+          {/* Mobile Language Toggle */}
+          <button
+            onClick={toggle}
+            className="flex items-center gap-1 bg-muted border border-border rounded-full px-2.5 py-1 text-xs font-semibold font-body transition-all duration-200"
+            aria-label="Toggle language"
+          >
+            <span>{lang === "en" ? "🇧🇩" : "🇬🇧"}</span>
+            <span className="text-foreground">{lang === "en" ? "বাং" : "EN"}</span>
+          </button>
+
+          {/* Hamburger */}
+          <button
+            className="flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -95,7 +120,7 @@ export default function Navbar() {
             className="bg-gradient-primary text-primary-foreground px-5 py-3 rounded-full text-sm font-semibold text-center shadow-soft"
             onClick={() => setMenuOpen(false)}
           >
-            Book Appointment
+            {t("nav.book")}
           </a>
         </div>
       )}

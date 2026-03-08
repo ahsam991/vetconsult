@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -22,6 +24,20 @@ export default function ContactSection() {
     setSubmitted(true);
   };
 
+  const contactDetails = [
+    {
+      icon: "📍",
+      labelKey: "contact.addr.label",
+      value: t("contact.addr.value"),
+      href: "https://maps.google.com/?q=10/7+Block-A+Iqbal+Road+Mohammadpur+Dhaka",
+    },
+    { icon: "📞", labelKey: "contact.phone.label", value: "+88 01750-656002", href: "tel:+8801750656002" },
+    { icon: "📞", labelKey: "contact.alt.label", value: "+88 01637-888667", href: "tel:+8801637888667" },
+    { icon: "💬", labelKey: "contact.wa.label", value: "+880 1750-656002", href: "https://wa.me/8801750656002" },
+    { icon: "✉️", labelKey: "contact.email.label", value: "drfoysalkabir@gmail.com", href: "mailto:drfoysalkabir@gmail.com" },
+    { icon: "🕐", labelKey: "contact.hours.label", value: t("contact.hours.value"), href: null },
+  ];
+
   return (
     <section id="contact" className="section-padding bg-muted">
       <div className="container mx-auto">
@@ -29,63 +45,24 @@ export default function ContactSection() {
           {/* Left info */}
           <div>
             <span className="inline-block bg-primary-light text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-              Visit / Contact Us
+              {t("contact.badge")}
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              We're <span className="text-gradient">Always Open</span>
+              {t("contact.title1")} <span className="text-gradient">{t("contact.title2")}</span>
             </h2>
             <p className="text-muted-foreground text-base font-body leading-relaxed mb-8">
-              Walk in anytime or book an appointment in advance. For urgent cases, 
-              please call or WhatsApp directly — we respond quickly.
+              {t("contact.desc")}
             </p>
 
-            {/* Contact details */}
             <div className="space-y-5">
-              {[
-                {
-                  icon: "📍",
-                  label: "Address",
-                  value: "10/7, Block-A, Iqbal Road (Opposite to Holy Flower School), 1st Floor of Green Homes, Flat A-2, Mohammadpur, Dhaka-1207",
-                  href: "https://maps.google.com/?q=10/7+Block-A+Iqbal+Road+Mohammadpur+Dhaka",
-                },
-                {
-                  icon: "📞",
-                  label: "Phone",
-                  value: "+88 01750-656002",
-                  href: "tel:+8801750656002",
-                },
-                {
-                  icon: "📞",
-                  label: "Alternate",
-                  value: "+88 01637-888667",
-                  href: "tel:+8801637888667",
-                },
-                {
-                  icon: "💬",
-                  label: "WhatsApp",
-                  value: "+880 1750-656002",
-                  href: "https://wa.me/8801750656002",
-                },
-                {
-                  icon: "✉️",
-                  label: "Email",
-                  value: "drfoysalkabir@gmail.com",
-                  href: "mailto:drfoysalkabir@gmail.com",
-                },
-                {
-                  icon: "🕐",
-                  label: "Hours",
-                  value: "Always Open — 24/7",
-                  href: null,
-                },
-              ].map((info) => (
-                <div key={info.label} className="flex items-start gap-4">
+              {contactDetails.map((info) => (
+                <div key={info.labelKey} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-primary-light flex items-center justify-center text-lg flex-shrink-0">
                     {info.icon}
                   </div>
                   <div>
                     <div className="font-body font-semibold text-xs text-muted-foreground uppercase tracking-wide mb-0.5">
-                      {info.label}
+                      {t(info.labelKey)}
                     </div>
                     {info.href ? (
                       <a
@@ -104,11 +81,10 @@ export default function ContactSection() {
               ))}
             </div>
 
-            {/* Facebook link */}
             <div className="mt-8 p-4 bg-card rounded-2xl shadow-soft border border-border flex items-center gap-4">
               <div className="w-12 h-12 bg-secondary-light rounded-xl flex items-center justify-center text-2xl">📘</div>
               <div>
-                <div className="font-body font-semibold text-sm text-foreground">Follow on Facebook</div>
+                <div className="font-body font-semibold text-sm text-foreground">{t("contact.fb")}</div>
                 <a
                   href="https://www.facebook.com/p/Vet-Consult-61575839930213/"
                   target="_blank"
@@ -127,45 +103,45 @@ export default function ContactSection() {
               <div className="text-center py-12">
                 <div className="text-6xl mb-4">🐾</div>
                 <h3 className="font-display text-2xl font-bold text-card-foreground mb-2">
-                  Appointment Request Sent!
+                  {t("form.success.title")}
                 </h3>
                 <p className="text-muted-foreground font-body text-sm mb-6">
-                  Thank you, {form.name}! Dr. Foysal will contact you shortly to confirm your visit.
+                  {t("form.success.desc").replace("{name}", form.name)}
                 </p>
                 <p className="text-sm text-muted-foreground font-body">
-                  For urgent cases, please call or WhatsApp directly:<br />
+                  {t("form.success.urgent")}<br />
                   <a href="tel:+8801750656002" className="text-primary font-semibold">+88 01750-656002</a>
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <h3 className="font-display text-xl font-bold text-card-foreground mb-2">
-                  Book an Appointment
+                  {t("form.title")}
                 </h3>
                 <p className="text-muted-foreground text-xs font-body mb-4">
-                  Fill in the form and we'll confirm your visit promptly.
+                  {t("form.desc")}
                 </p>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">Your Name *</label>
+                    <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">{t("form.name")}</label>
                     <input
                       type="text"
                       name="name"
                       required
-                      placeholder="Your full name"
+                      placeholder={t("form.name.ph")}
                       value={form.name}
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm font-body placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">Phone / WhatsApp *</label>
+                    <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">{t("form.phone")}</label>
                     <input
                       type="tel"
                       name="phone"
                       required
-                      placeholder="01XXXXXXXXX"
+                      placeholder={t("form.phone.ph")}
                       value={form.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm font-body placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
@@ -175,36 +151,36 @@ export default function ContactSection() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">Pet's Name</label>
+                    <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">{t("form.petname")}</label>
                     <input
                       type="text"
                       name="petName"
-                      placeholder="e.g. Bruno"
+                      placeholder={t("form.petname.ph")}
                       value={form.petName}
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm font-body placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">Pet Type</label>
+                    <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">{t("form.pettype")}</label>
                     <select
                       name="petType"
                       value={form.petType}
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm font-body focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
                     >
-                      <option value="">Select...</option>
-                      <option value="dog">Dog 🐕</option>
-                      <option value="cat">Cat 🐈</option>
-                      <option value="bird">Bird 🦜</option>
-                      <option value="rabbit">Rabbit 🐇</option>
-                      <option value="other">Other</option>
+                      <option value="">{t("form.pettype.ph")}</option>
+                      <option value="dog">{t("opt.dog")}</option>
+                      <option value="cat">{t("opt.cat")}</option>
+                      <option value="bird">{t("opt.bird")}</option>
+                      <option value="rabbit">{t("opt.rabbit")}</option>
+                      <option value="other">{t("opt.other")}</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">Service Needed *</label>
+                  <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">{t("form.service")}</label>
                   <select
                     name="service"
                     required
@@ -212,22 +188,22 @@ export default function ContactSection() {
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm font-body focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
                   >
-                    <option value="">Choose a service...</option>
-                    <option value="consultation">General Consultation</option>
-                    <option value="surgery">Surgery / Operation</option>
-                    <option value="vaccination">Vaccination</option>
-                    <option value="online">Online Consultation</option>
-                    <option value="deworming">Deworming</option>
-                    <option value="other">Other</option>
+                    <option value="">{t("form.service.ph")}</option>
+                    <option value="consultation">{t("svc.consultation")}</option>
+                    <option value="surgery">{t("svc.surgery")}</option>
+                    <option value="vaccination">{t("svc.vaccination")}</option>
+                    <option value="online">{t("svc.online")}</option>
+                    <option value="deworming">{t("svc.deworming")}</option>
+                    <option value="other">{t("svc.other")}</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">Describe the Problem</label>
+                  <label className="block text-xs font-semibold text-foreground mb-1.5 font-body">{t("form.msg")}</label>
                   <textarea
                     name="message"
                     rows={3}
-                    placeholder="Describe your pet's condition or any specific concerns..."
+                    placeholder={t("form.msg.ph")}
                     value={form.message}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm font-body placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition resize-none"
@@ -238,11 +214,11 @@ export default function ContactSection() {
                   type="submit"
                   className="w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-full font-semibold text-sm shadow-soft hover:shadow-hover hover:scale-[1.02] transition-all duration-300"
                 >
-                  📅 Request Appointment
+                  {t("form.submit")}
                 </button>
 
                 <p className="text-center text-xs text-muted-foreground font-body">
-                  Or call us directly:{" "}
+                  {t("form.call")}{" "}
                   <a href="tel:+8801750656002" className="text-primary font-semibold">
                     01750-656002
                   </a>
