@@ -1,7 +1,7 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
-import { Outlet, useLocation } from "react-router-dom";
-import { Bell, Search } from "lucide-react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Bell, Search, LogOut } from "lucide-react";
 
 const pageTitles: Record<string, string> = {
   "/admin": "Dashboard",
@@ -14,7 +14,13 @@ const pageTitles: Record<string, string> = {
 
 export default function AdminLayout() {
   const location = useLocation();
+  const navigate = useNavigate();
   const title = pageTitles[location.pathname] ?? "Admin";
+
+  function handleLogout() {
+    sessionStorage.removeItem("admin_auth");
+    navigate("/admin/login");
+  }
 
   return (
     <SidebarProvider>
@@ -43,6 +49,14 @@ export default function AdminLayout() {
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                 <span className="text-xs font-bold text-primary-foreground">A</span>
               </div>
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-xs text-muted-foreground hover:text-destructive hover:border-destructive/40 hover:bg-destructive/5 transition-all duration-200"
+                title="Logout"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                <span className="hidden sm:block">Logout</span>
+              </button>
             </div>
           </header>
 
