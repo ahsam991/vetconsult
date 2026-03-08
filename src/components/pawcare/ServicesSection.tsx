@@ -2,66 +2,73 @@ import vetImg from "@/assets/service-vet.jpg";
 import surgeryImg from "@/assets/service-surgery.jpg";
 import vaccineImg from "@/assets/service-vaccine.jpg";
 import onlineImg from "@/assets/service-online.jpg";
-
-const services = [
-  {
-    id: 1,
-    title: "General Consultation",
-    description:
-      "Comprehensive health examination for dogs, cats, and other pet animals. Diagnosis and treatment of illnesses, injuries, and chronic conditions.",
-    image: vetImg,
-    badge: "Most Popular",
-    color: "primary",
-    icon: "🩺",
-  },
-  {
-    id: 2,
-    title: "Surgery & Operations",
-    description:
-      "Expert surgical procedures by Dr. Foysal Kabir (MS Fellow in Surgery). Soft tissue surgeries, orthopaedic procedures, and emergency operations.",
-    image: surgeryImg,
-    badge: null,
-    color: "secondary",
-    icon: "🏥",
-  },
-  {
-    id: 3,
-    title: "Vaccination & Prevention",
-    description:
-      "Complete vaccination schedules for dogs and cats. Anti-rabies, distemper, parvovirus, and all essential preventive immunizations.",
-    image: vaccineImg,
-    badge: null,
-    color: "primary",
-    icon: "💉",
-  },
-  {
-    id: 4,
-    title: "Online Consultation",
-    description:
-      "Can't visit the clinic? Get expert vet advice online via WhatsApp or phone call. Quick diagnosis and prescription for your pet from anywhere in Bangladesh.",
-    image: onlineImg,
-    badge: "Available Now",
-    color: "secondary",
-    icon: "💻",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ServicesSection() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      id: 1,
+      title: t("s1.title"),
+      description: t("s1.desc"),
+      image: vetImg,
+      badge: t("s1.badge"),
+      color: "primary",
+      icon: "🩺",
+    },
+    {
+      id: 2,
+      title: t("s2.title"),
+      description: t("s2.desc"),
+      image: surgeryImg,
+      badge: null,
+      color: "secondary",
+      icon: "🏥",
+    },
+    {
+      id: 3,
+      title: t("s3.title"),
+      description: t("s3.desc"),
+      image: vaccineImg,
+      badge: null,
+      color: "primary",
+      icon: "💉",
+    },
+    {
+      id: 4,
+      title: t("s4.title"),
+      description: t("s4.desc"),
+      image: onlineImg,
+      badge: t("s4.badge"),
+      color: "secondary",
+      icon: "💻",
+    },
+  ];
+
+  const extras = [
+    { icon: "🦷", name: t("extra.dental") },
+    { icon: "🩻", name: t("extra.xray") },
+    { icon: "💊", name: t("extra.deworm") },
+    { icon: "✂️", name: t("extra.neuter") },
+    { icon: "🩹", name: t("extra.wound") },
+    { icon: "🧪", name: t("extra.lab") },
+  ];
+
   return (
     <section id="services" className="section-padding bg-background">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block bg-primary-light text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-            Our Services
+            {t("services.badge")}
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Expert Care for{" "}
-            <span className="text-gradient">Every Pet</span>
+            {t("services.title1")}{" "}
+            <span className="text-gradient">{t("services.title2")}</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg font-body leading-relaxed">
-            From routine check-ups to complex surgeries — professional veterinary care 
-            you can trust for your beloved animals.
+            {t("services.desc")}
           </p>
         </div>
 
@@ -73,7 +80,6 @@ export default function ServicesSection() {
               className="group bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              {/* Image */}
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={service.image}
@@ -93,7 +99,6 @@ export default function ServicesSection() {
                 )}
               </div>
 
-              {/* Content */}
               <div className="p-5">
                 <div className="text-2xl mb-2">{service.icon}</div>
                 <h3 className="font-display text-lg font-bold text-card-foreground mb-2">
@@ -110,7 +115,7 @@ export default function ServicesSection() {
                       : "bg-secondary-light text-secondary hover:bg-secondary hover:text-secondary-foreground"
                   }`}
                 >
-                  Book Now →
+                  {t("services.book")}
                 </a>
               </div>
             </div>
@@ -120,17 +125,10 @@ export default function ServicesSection() {
         {/* Additional services list */}
         <div className="mt-12 bg-muted rounded-3xl p-8">
           <h3 className="font-display text-xl font-bold text-foreground mb-6 text-center">
-            Also Available
+            {t("services.also")}
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {[
-              { icon: "🦷", name: "Dental Care" },
-              { icon: "🩻", name: "X-Ray & Imaging" },
-              { icon: "💊", name: "Deworming" },
-              { icon: "✂️", name: "Neutering / Spaying" },
-              { icon: "🩹", name: "Wound Care" },
-              { icon: "🧪", name: "Lab Tests" },
-            ].map((item) => (
+            {extras.map((item) => (
               <div key={item.name} className="bg-card rounded-2xl p-4 text-center shadow-soft hover:shadow-card transition-all duration-200 hover:-translate-y-0.5">
                 <div className="text-3xl mb-2">{item.icon}</div>
                 <div className="text-xs font-body font-semibold text-card-foreground">{item.name}</div>

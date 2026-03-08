@@ -1,4 +1,18 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const services = [
+    t("svc.consultation"),
+    t("svc.surgery"),
+    t("svc.vaccination"),
+    t("svc.online"),
+    t("svc.deworming"),
+    t("extra.dental"),
+    t("extra.lab"),
+  ];
+
   return (
     <footer className="bg-dark text-white">
       <div className="container mx-auto px-6 py-16">
@@ -14,11 +28,11 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-display text-xl font-bold text-gradient leading-none">Vet & Pet Care</div>
-                <div className="text-xs font-body text-white/50">Dr. Foysal Kabir</div>
+                <div className="text-xs font-body text-white/50">{t("nav.subtitle")}</div>
               </div>
             </div>
             <p className="text-white/60 text-sm font-body leading-relaxed mb-4">
-              Expert veterinary consultation and surgery for pet animals. Located in Mohammadpur, Dhaka. Always open for your pets.
+              {t("footer.desc")}
             </p>
             <div className="text-xs text-white/40 font-body">
               BVC Reg. No. 9774
@@ -27,17 +41,9 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-display font-bold text-white mb-4">Services</h4>
+            <h4 className="font-display font-bold text-white mb-4">{t("footer.services")}</h4>
             <ul className="space-y-2 text-sm font-body">
-              {[
-                "General Consultation",
-                "Surgery & Operations",
-                "Vaccination",
-                "Online Consultation",
-                "Deworming",
-                "Dental & Wound Care",
-                "Lab Tests",
-              ].map((s) => (
+              {services.map((s) => (
                 <li key={s}>
                   <a href="#services" className="text-white/60 hover:text-primary transition-colors">
                     {s}
@@ -49,26 +55,26 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-bold text-white mb-4">Contact</h4>
+            <h4 className="font-display font-bold text-white mb-4">{t("footer.contact")}</h4>
             <div className="space-y-3 text-sm font-body text-white/60">
               <div>
-                <div className="text-white/40 text-xs uppercase tracking-wide mb-0.5">Address</div>
-                <div>10/7, Block-A, Iqbal Road<br />Opposite Holy Flower School<br />1st Floor, Green Homes (Flat A-2)<br />Mohammadpur, Dhaka-1207</div>
+                <div className="text-white/40 text-xs uppercase tracking-wide mb-0.5">{t("contact.addr.label")}</div>
+                <div>{t("contact.addr.value")}</div>
               </div>
               <div>
-                <div className="text-white/40 text-xs uppercase tracking-wide mb-0.5">Phone</div>
+                <div className="text-white/40 text-xs uppercase tracking-wide mb-0.5">{t("contact.phone.label")}</div>
                 <a href="tel:+8801750656002" className="hover:text-primary transition-colors block">+88 01750-656002</a>
                 <a href="tel:+8801637888667" className="hover:text-primary transition-colors block">+88 01637-888667</a>
               </div>
               <div>
-                <div className="text-white/40 text-xs uppercase tracking-wide mb-0.5">Email</div>
+                <div className="text-white/40 text-xs uppercase tracking-wide mb-0.5">{t("contact.email.label")}</div>
                 <a href="mailto:drfoysalkabir@gmail.com" className="hover:text-primary transition-colors">
                   drfoysalkabir@gmail.com
                 </a>
               </div>
               <div>
-                <div className="text-white/40 text-xs uppercase tracking-wide mb-0.5">Hours</div>
-                <span className="text-secondary font-semibold">Always Open — 24/7</span>
+                <div className="text-white/40 text-xs uppercase tracking-wide mb-0.5">{t("contact.hours.label")}</div>
+                <span className="text-secondary font-semibold">{t("contact.hours.value")}</span>
               </div>
             </div>
           </div>
@@ -76,7 +82,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-body text-white/40">
-          <span>© 2026 Vet & Pet Care · Dr. Foysal Kabir. All rights reserved.</span>
+          <span>{t("footer.copyright")}</span>
           <div className="flex gap-6">
             <a
               href="https://www.facebook.com/p/Vet-Consult-61575839930213/"
